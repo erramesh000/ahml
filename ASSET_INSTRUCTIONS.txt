@@ -1,0 +1,9 @@
+Place the attached logo image into the project so the page can display it:
+
+1) Create a folder named `assets` at the project root if it doesn't exist.
+2) Save your provided logo image as `assets/logo.png` (or `logo.jpg`) replacing the existing placeholder.
+
+Preview:
+- Open `index.html` in your browser (double-click the file or right-click -> Open With).
+
+If you prefer, I can embed the logo directly into `index.html` as a base64 data URL so you don't need an external file — tell me if you'd like that.
