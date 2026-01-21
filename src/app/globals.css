@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts for modern sans-serif look */
+/* Use Poppins across the project (falls back to Inter/system fonts) */
+:root {
+  --app-font: 'Poppins', 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* Apply font globally to all elements */
+html,
+body,
+input,
+textarea,
+button,
+select,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div,
+ul,
+ol,
+li,
+table,
+th,
+td {
+  font-family: var(--app-font) !important;
+}
+
+/* Header: responsive, animated and accessible */
+.gn-header {
+  position: sticky;
+  top: 10px;
+  z-index: 80;
+  margin: 0 8px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 250, 250, 0.85));
+  box-shadow: 0 8px 28px rgba(6, 12, 8, 0.08);
+  animation: gn-slideDown .45s ease both;
+  overflow: visible;
+}
+
+.gn-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Brand */
+.gn-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.gn-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  transition: transform .45s cubic-bezier(.22, .9, .3, 1);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.gn-brand:hover .gn-logo {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.gn-title {
+  font-weight: 800;
+  color: #2a5a2a;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* Nav */
+.gn-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  transition: opacity .28s ease, transform .28s ease;
+}
+
+.gn-link {
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  padding: 6px 0;
+  border-radius: 6px;
+  transition: color .18s ease;
+}
+
+.gn-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #2aa74a, #29b6d1);
+  border-radius: 4px;
+  transition: width .28s cubic-bezier(.2, .8, .2, 1);
+}
+
+.gn-link:hover,
+.gn-link:focus {
+  color: #2a3845;
+}
+
+.gn-link:hover::after,
+.gn-link:focus::after {
+  width: 100%;
+}
+
+/* Burger (mobile) */
+.gn-burger {
+  display: none;
+  margin-left: 12px;
+  width: 46px;
+  height: 38px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.gn-burger span {
+  display: block;
+  height: 3px;
+  width: 22px;
+  background: #2e3b2e;
+  border-radius: 3px;
+  margin: 4px 0;
+  transition: transform .32s cubic-bezier(.2, .9, .3, 1), opacity .2s;
+}
+
+.gn-burger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.gn-burger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.gn-burger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu panel */
+@media (max-width: 768px) {
+  .gn-nav {
+    position: fixed;
+    right: 14px;
+    top: 86px;
+    width: calc(100% - 36px);
+    max-width: 420px;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 14px;
+    box-shadow: 0 14px 40px rgba(6, 12, 8, 0.14);
+    transform: translateY(-8px) scale(.99);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .28s cubic-bezier(.2, .9, .3, 1), opacity .28s;
+  }
+
+  .gn-nav.open {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .gn-burger {
+    display: inline-flex;
+  }
+
+  .gn-link {
+    font-size: 18px;
+    color: #244224;
+    padding: 10px 6px;
+  }
+}
+
+/* Accent animated bottom bar */
+.gn-accent {
+  height: 8px;
+  margin: 6px 0 10px;
+  background: linear-gradient(90deg, #2a3845, #747474, #c2c5c9);
+  background-size: 200% 100%;
+  animation: gn-slide 6s linear infinite;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Animations */
+@keyframes gn-slide {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gn-slideDown {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Focus ring for accessibility */
+a:focus,
+button:focus {
+  outline: 3px solid rgba(45, 160, 70, 0.12);
+  outline-offset: 3px;
+}
+
+/* SlideSession: parallax bokeh hero */
+.slide-session {
+  position: relative;
+  overflow: hidden;
+  min-height: 66vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 24px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #1f5a2f 0%, #2a8f8f 100%);
+  color: #fff;
+  isolation: isolate;
+}
+
+.bokeh {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* each layer is a large blurred circle with different color & size */
+.bokeh__layer {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(36px) saturate(120%);
+  opacity: 0.18;
+  will-change: transform, opacity;
+  mix-blend-mode: screen;
+  transition: opacity 400ms ease;
+  transform: translate3d(0, 0, 0);
+}
+
+/* tuned sizes and positions for visual depth */
+.layer--1 {
+  width: 520px;
+  height: 520px;
+  left: -8%;
+  top: 10%;
+  background: radial-gradient(circle at 30% 30%, rgba(60, 190, 110, 0.95), rgba(60, 190, 110, 0.06) 45%, transparent 65%);
+  opacity: 0.22;
+}
+
+.layer--2 {
+  width: 420px;
+  height: 420px;
+  right: -4%;
+  top: 6%;
+  background: radial-gradient(circle at 70% 20%, rgba(40, 180, 200, 0.9), rgba(40, 180, 200, 0.05) 45%, transparent 70%);
+  opacity: 0.18;
+}
+
+.layer--3 {
+  width: 380px;
+  height: 380px;
+  left: 12%;
+  bottom: 6%;
+  background: radial-gradient(circle at 40% 60%, rgba(50, 140, 100, 0.9), rgba(50, 140, 100, 0.05) 50%, transparent 75%);
+  opacity: 0.14;
+}
+
+.layer--4 {
+  width: 260px;
+  height: 260px;
+  right: 18%;
+  bottom: 12%;
+  background: radial-gradient(circle at 60% 40%, rgba(30, 120, 160, 0.85), rgba(30, 120, 160, 0.04) 46%, transparent 78%);
+  opacity: 0.12;
+}
+
+.layer--5 {
+  width: 140px;
+  height: 140px;
+  left: 44%;
+  top: 28%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02) 40%, transparent 80%);
+  opacity: 0.08;
+}
+
+/* main content sits above layers */
+.slide-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  text-align: center;
+  padding: 18px 28px;
+}
+
+.slide-content h1 {
+  font-size: clamp(28px, 5.8vw, 64px);
+  line-height: 1.02;
+  margin: 0 0 18px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 6px 26px rgba(6, 12, 8, 0.24);
+}
+
+.slide-content p {
+  max-width: 820px;
+  margin: 0 auto 26px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(14px, 1.6vw, 18px);
+  line-height: 1.7;
+}
+
+/* CTA */
+.slide-content .cta {
+  display: inline-block;
+  background: linear-gradient(180deg, #ffffff 0%, #f2f2f2 100%);
+  color: #1f5a1f;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(40, 90, 40, 0.12);
+  transition: transform .22s cubic-bezier(.2, .9, .3, 1), box-shadow .22s;
+}
+
+.slide-content .cta:hover,
+.slide-content .cta:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(40, 90, 40, 0.16);
+  outline: none;
+}
+
+/* reduce motion & disable mouse parallax on small / touch devices */
+@media (max-width: 768px),
+(pointer: coarse) {
+  .bokeh__layer {
+    filter: blur(28px);
+    transition: transform 240ms ease;
+  }
+
+  .slide-session {
+    min-height: 56vh;
+    padding: 56px 18px;
+    border-radius: 6px;
+  }
+}
+
+/* respects user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .bokeh__layer {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Mobile: prevent decorative layers from causing horizontal overflow */
+@media (max-width: 768px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Keep large blurred layers inside the viewport on small screens */
+  .layer--1,
+  .layer--2,
+  .layer--4 {
+    left: 0 !important;
+    right: 0 !important;
+    width: clamp(120px, 28vw, 420px) !important;
+    transform: translateX(0) !important;
+    opacity: 0.14 !important;
+  }
+
+  .bokeh {
+    overflow: hidden;
+  }
+}
