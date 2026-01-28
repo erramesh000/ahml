@@ -32,7 +32,7 @@ export default function Footer() {
                 <div className="cta-inner">
                     <div className="cta-content">
                         <h2 className="cta-title">Don't wait and make an<br />appointment today</h2>
-                        <Link href="/#book" className="cta-btn">Book an appointment</Link>
+                        <Link href="/appointment" className="cta-btn">Book an appointment</Link>
                     </div>
                 </div>
             </footer>

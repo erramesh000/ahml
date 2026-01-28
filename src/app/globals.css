@@ -420,10 +420,10 @@ button:focus {
 }
 
 .cta-spa {
-    --cta-blue-1: #f1be64;
-    --cta-blue-2: #bc4b78;
-    background: linear-gradient(135deg, var(--cta-blue-1) 0%, var(--cta-blue-2) 100%);
-    color: #fff;
-    margin: 15px 10px;
-    padding: 30px 30px;
+  --cta-blue-1: #f1be64;
+  --cta-blue-2: #bc4b78;
+  background: linear-gradient(135deg, var(--cta-blue-1) 0%, var(--cta-blue-2) 100%);
+  color: #fff;
+  margin: 15px 10px;
+  padding: 30px 30px;
 }

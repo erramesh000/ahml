@@ -9,10 +9,19 @@
     box-sizing: border-box;
 }
 
+/* Center the appointment card within the viewport */
+.appointmentbg {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 0;
+}
+
 /* New layout constraints */
 .appointment-page.alt-two {
     max-width: 1180px;
-    margin: 32px auto;
+    margin: 0 auto;
     padding: 32px 20px;
     /* reduced horizontal padding to avoid overflow */
     position: relative;
@@ -120,11 +129,18 @@
 /* layout: use flexible aside width and clamp to avoid overflow */
 .appointment-inner {
     display: grid;
-    grid-template-columns: 1fr min(420px, 36%);
+    grid-template-columns: minmax(0, 820px);
+    justify-content: center;
     gap: 28px;
     align-items: start;
     position: relative;
     z-index: 2;
+}
+
+@media (max-width: 520px) {
+    .appointmentbg {
+        padding: 20px 0;
+    }
 }
 
 /* card: responsive padding and prevent inner overflow */
@@ -142,6 +158,18 @@
     overflow: hidden;
     width: 100%;
     max-width: 100%;
+}
+
+.appointment-logo {
+    display: flex;
+    justify-content: center;
+    margin: 4px 0 10px;
+}
+
+.appointment-logo img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
 }
 
 .appointment-card.show {
