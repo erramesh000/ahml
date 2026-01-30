@@ -181,7 +181,7 @@
 .appointment-card h2 {
     margin: 0 0 14px;
     font-size: clamp(20px, 3.2vw, 26px);
-    color: #154625;
+    color: #bc4b78;
     font-weight: 800;
 }
 
@@ -257,7 +257,7 @@
 
 .btn {
     border: none;
-    background: linear-gradient(180deg, #2a8f8f, #1c6f3d);
+    background: #bc4b78;
     color: #fff;
     padding: 12px 20px;
     border-radius: 999px;

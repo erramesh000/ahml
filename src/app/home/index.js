@@ -32,7 +32,7 @@ export default function Home() {
     return (
         <>
             <div style={{ backgroundImage: "url('/images/toppic.jpg')", height: "100vh", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                <div className="flex justify-center items-center flex-col h-screen w-full gap-y-7 p-5" style={{ opacity: "0.7", backgroundColor: "black" }}>
+                <div className="flex justify-center items-center flex-col h-screen w-full gap-y-7 p-5" style={{ opacity: "0.9" }}>
                     <h1 className="text-4xl text-white italic text-center">Welcome To Our Therapy Center</h1>
                     <h1 className="font-bold text-6xl uppercase  text-[#bc4b78] text-center">Advanced Healing Massage </h1>
                     <h2 className="text-2xl text-white text-center">
@@ -44,17 +44,17 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="text-center rounded-3xl flex items-center md:flex-row sm:flex-row flex-col cta-spa">
+            <div className="text-center rounded-3xl flex items-center md:flex-row sm:flex-row flex-col p-5">
                 <img src="/images/hero1.jpg" width={500} className="rounded-3xl sm:w-1/2 md:w-1/2 lg:w/12 w-full" />
                 <div className="w-1/2">
-                    <h5 className="text-3xl tracking-tight font-semibold text-heading">Relax Your Body</h5>
-                    <p className="text-base text-body sm:text-lg">Our Treatments</p>
+                    <h5 className="text-3xl tracking-tight font-semibold text-heading text-[#bc4b78]">Relax Your Body</h5>
+                    <p className="text-base text-body sm:text-lg text-[#bc4b78]">Our Treatments</p>
                     <ul className="p-2">
-                        <li className="text-red-950 text-lg font-bold">Body Treatments</li>
-                        <li className="text-red-950 text-lg font-bold">Hydrotherapy Treatments</li>
-                        <li className="text-red-950 text-lg font-bold">Massage Therapies</li>
-                        <li className="text-red-950 text-lg font-bold">Makeup & Waxing</li>
-                        <li className="text-red-950 text-lg font-bold">Nail Treatments</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Body Treatments</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Hydrotherapy Treatments</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Massage Therapies</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Makeup & Waxing</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Nail Treatments</li>
                     </ul>
                 </div>
             </div>
@@ -62,16 +62,16 @@ export default function Home() {
             <Services />
             <Prices />
 
-            <div className="text-center rounded-3xl flex items-center md:flex-row sm:flex-row flex-col cta-spa">
+            <div className="text-center rounded-3xl flex items-center md:flex-row sm:flex-row flex-col p-5 m-3">
                 <div className="w-1/2">
-                    <h5 className="text-3xl tracking-tight font-semibold text-heading">Relax Your Body</h5>
-                    <p className="text-base text-body sm:text-lg">Our Treatments</p>
+                    <h5 className="text-3xl tracking-tight font-semibold text-heading text-[#bc4b78]">Relax Your Body</h5>
+                    <p className="text-base text-body sm:text-lg text-[#bc4b78]">Our Treatments</p>
                     <ul>
-                        <li className="text-red-950 text-lg font-bold">Body Treatments</li>
-                        <li className="text-red-950 text-lg font-bold">Hydrotherapy Treatments</li>
-                        <li className="text-red-950 text-lg font-bold">Massage Therapies</li>
-                        <li className="text-red-950 text-lg font-bold">Makeup & Waxing</li>
-                        <li className="text-red-950 text-lg font-bold">Nail Treatments</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Body Treatments</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Hydrotherapy Treatments</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Massage Therapies</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Makeup & Waxing</li>
+                        <li className="text-[#bc4b78] text-lg font-bold">Nail Treatments</li>
                     </ul>
                 </div>
                 <img src="/images/hero2.jpg" width={500} className="rounded-3xl sm:w-1/2 md:w-1/2 lg:w/12 w-full" />

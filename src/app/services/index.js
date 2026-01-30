@@ -15,7 +15,7 @@ export default function Services() {
                     <h1>BEDOCTOR</h1>
                     <h1 className="text-7xl font-semibold mt-10 mb-10">Services</h1>
                     <p className="w-80 sm:w-120 md:w-150 lg:w-200 text-2xl text-center">Vulputate fringilla in gravida hendrerit quis sed ultrices. Risus in vestibulum turpis velit. Varius id consequat consectetur odio elementum elit enim.</p>
-                    <button onClick={handleScrollToDiv} className="mt-10 mb-10 px-8 py-3 bg-[#1d4ed8] hover:bg-[#123fbb] rounded-full text-white cursor-pointer">Services</button>
+                    <button onClick={handleScrollToDiv} className="mt-10 mb-10 px-8 py-3 bg-[#bc4b78] hover:bg-bg-[#bc4b78] rounded-full text-white cursor-pointer">Services</button>
                 </div>
                 {/* <div className="grid gap-8 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] bg-white rounded-4xl shadow-[0_24px_60px_rgba(15,23,42,0.12)] overflow-hidden px-6 py-10 sm:px-10 md:px-14 md:py-14"> */}
                     {/* Left: Text content */}
@@ -39,7 +39,7 @@ export default function Services() {
                         <div className="my-8 h-px w-full bg-slate-200" />
 
                         <div className="flex flex-wrap items-center gap-4 text-sm">
-                            <button className="rounded-full bg-[#1d4ed8] px-8 py-3 font-medium text-white shadow-[0_18px_45px_rgba(37,99,235,0.55)] hover:bg-[#1e40af] transition-colors">
+                            <button className="rounded-full bg-[#1d4ed8] px-8 py-3 font-medium text-white shadow-[0_18px_45px_rgba(188,75,120,0.55)] cursor-pointer hover:bg-[#1e40af] transition-colors">
                                 Book a visit
                             </button>
                             <p className="text-slate-500">
@@ -82,11 +82,11 @@ export default function Services() {
                             <div className="my-8 h-px w-full bg-slate-200" />
 
                             <div className="flex flex-wrap flex-col gap-y-10 text-sm">
-                                <button className="rounded-full bg-[#1d4ed8] py-5 font-medium text-white shadow-[0_18px_45px_rgba(37,99,235,0.55)] hover:bg-[#1e40af] transition-colors w-50">
+                                <button className="rounded-full bg-[#bc4b78] py-5 font-medium text-white shadow-[0_18px_45px_rgba(188,75,120,0.55)] cursor-pointer hover:bg-[#bc4b78] transition-colors w-50">
                                     Book a visit
                                 </button>
                                 <p className="text-slate-500">
-                                    or call us: <span className="font-medium text-[#3b82f6]">+61 (0) 0 0000 0000</span>
+                                    or call us: <span className="font-medium text-[#bc4b78]">+61 (0) 0 0000 0000</span>
                                 </p>
                             </div>
                         </div>
@@ -115,11 +115,11 @@ export default function Services() {
                             <div className="my-8 h-px w-full bg-slate-200" />
 
                             <div className="flex flex-wrap flex-col gap-y-10 text-sm">
-                                <button className="rounded-full bg-[#1d4ed8] py-5 font-medium text-white shadow-[0_18px_45px_rgba(37,99,235,0.55)] hover:bg-[#1e40af] transition-colors w-50">
+                                <button className="rounded-full bg-[#bc4b78] py-5 font-medium text-white shadow-[0_18px_45px_rgba(188,75,120,0.55)] cursor-pointer hover:bg-[#bc4b78] transition-colors w-50">
                                     Book a visit
                                 </button>
                                 <p className="text-slate-500">
-                                    or call us: <span className="font-medium text-[#3b82f6]">+61 (0) 0 0000 0000</span>
+                                    or call us: <span className="font-medium text-[#bc4b78]">+61 (0) 0 0000 0000</span>
                                 </p>
                             </div>
                         </div>
@@ -151,11 +151,11 @@ export default function Services() {
                             <div className="my-8 h-px w-full bg-slate-200" />
 
                             <div className="flex flex-wrap flex-col gap-y-10 text-sm">
-                                <button className="rounded-full bg-[#1d4ed8] py-5 font-medium text-white shadow-[0_18px_45px_rgba(37,99,235,0.55)] hover:bg-[#1e40af] transition-colors w-50">
+                                <button className="rounded-full bg-[#bc4b78] py-5 font-medium text-white shadow-[0_18px_45px_rgba(188,75,120,0.55)] cursor-pointer hover:bg-[#bc4b78] transition-colors w-50">
                                     Book a visit
                                 </button>
                                 <p className="text-slate-500">
-                                    or call us: <span className="font-medium text-[#3b82f6]">+61 (0) 0 0000 0000</span>
+                                    or call us: <span className="font-medium text-[#bc4b78]">+61 (0) 0 0000 0000</span>
                                 </p>
                             </div>
                         </div>
@@ -184,11 +184,11 @@ export default function Services() {
                             <div className="my-8 h-px w-full bg-slate-200" />
 
                             <div className="flex flex-wrap flex-col gap-y-10 text-sm">
-                                <button className="rounded-full bg-[#1d4ed8] py-5 font-medium text-white shadow-[0_18px_45px_rgba(37,99,235,0.55)] hover:bg-[#1e40af] transition-colors w-50">
+                                <button className="rounded-full bg-[#bc4b78] py-5 font-medium text-white shadow-[0_18px_45px_rgba(188,75,120,0.55)] cursor-pointer hover:bg-[#bc4b78] transition-colors w-50">
                                     Book a visit
                                 </button>
                                 <p className="text-slate-500">
-                                    or call us: <span className="font-medium text-[#3b82f6]">+61 (0) 0 0000 0000</span>
+                                    or call us: <span className="font-medium text-[#bc4b78]">+61 (0) 0 0000 0000</span>
                                 </p>
                             </div>
                         </div>
@@ -203,7 +203,7 @@ export default function Services() {
                     <div className="mt-20 px-3 text-5xl font-semibold text-white">
                         <h1>Why you should</h1>
                         <h1>choose me</h1>
-                        <button className="mt-10 mb-10 px-8 py-4 text-sm bg-[#1d4ed8] hover:bg-[#123fbb] rounded-full text-white">My Experience</button>
+                        <button className="mt-10 mb-10 px-8 py-4 text-sm bg-[#bc4b78] hover:bg-[#bc4b78] rounded-full text-white cursor-pointer">My Experience</button>
                     </div>
                     <div className="mb-20 px-3">
                         <div className="flex flex-col md:flex-row gap-y-10 md:justify-between">
@@ -229,8 +229,8 @@ export default function Services() {
 function FeatureItem({ children }) {
     return (
         <div className="flex gap-x-5 items-center relative">
-            <span className="mt-0.5 flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#3b82f6] bg-white shadow-[0_0_0_6px_rgba(59,130,246,0.18)] ">
-                <span className="text-[#2563eb] text-lg leading-none">✓</span>
+            <span className="mt-0.5 flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#bc4b78] bg-white shadow-[0_0_0_6px_rgba(188,75,120,0.18)] ">
+                <span className="text-[#bc4b78] text-lg leading-none">✓</span>
             </span>
             <p className="leading-relaxed absolute left-15">{children}</p>
         </div>
