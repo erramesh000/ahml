@@ -44,7 +44,13 @@ export default function Appointment() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+        if (!form.name.trim()  || 
+            !form.phone.trim() || 
+            !form.email.trim() || 
+            !form.message.trim() ||
+            !form.date.trim() ||
+            !form.time.trim()
+        ) {
             setStatus("error");
             setTimeout(() => setStatus("idle"), 2200);
             return;
@@ -60,6 +66,9 @@ export default function Appointment() {
                     email: form.email.trim(),
                     subject: `New Appointment Form Submission from ${form.name.trim()}`,
                     name: form.name.trim(),
+                    phone: form.phone.trim(),
+                    date: form.date.trim(),
+                    time: form.time.trim(),
                     text: form.message.trim(),
                     company: form.company.trim(),
                     html: "",
@@ -82,7 +91,7 @@ export default function Appointment() {
                 <div className="appointment-inner">
                     <section ref={cardRef} className="appointment-card" aria-labelledby="appointment-heading">
                         <div className="appointment-logo" aria-hidden="true">
-                            <Image src="/images/ahml.png" alt="" width={96} height={96} priority />
+                            <img src="/images/ahml.png" alt="" width={96} height={96} />
                         </div>
                         <h2 id="appointment-heading">Massage Consent & Appointment Form</h2>
 
@@ -94,7 +103,7 @@ export default function Appointment() {
                             </label>
 
                             <label className={`field ${form.phone ? "filled" : ""}`}>
-                                <span>Phone Number</span>
+                                <span>Phone Number *</span>
                                 <input name="phone" value={form.phone} onChange={onChange} type="tel" autoComplete="tel" />
                             </label>
 
@@ -105,12 +114,12 @@ export default function Appointment() {
 
                             <div className="form-row">
                                 <label className={`field ${form.date ? "filled" : ""}`}>
-                                    <span></span>
+                                    <span className="px-27">*</span>
                                     <input name="date" value={form.date} onChange={onChange} type="date" />
                                 </label>
 
                                 <label className={`field ${form.time ? "filled" : ""}`}>
-                                    <span></span>
+                                    <span className="px-18">*</span>
                                     <input name="time" value={form.time} onChange={onChange} type="time" />
                                 </label>
                             </div>
@@ -131,7 +140,7 @@ export default function Appointment() {
                                 </button>
 
                                 <div className={`status ${status}`} role="status" aria-hidden={status === "idle"}>
-                                    {status === "error" && <span className="err">Please complete required fields</span>}
+                                    {status === "error" && <span className="err">Please complete required fields with *</span>}
                                 </div>
                             </div>
                         </form>
