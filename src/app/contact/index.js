@@ -1,12 +1,10 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
-//import greennew from "../images/ahml.png";
 import "./index.css";
 
-export default function Appointment() {
-    const [form, setForm] = useState({ name: "", phone: "", email: "", company: "", date: "", time: "", area: "", city: "", state: "", postCode: "", message: "" });
+export default function Contact() {
+    const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
     const [status, setStatus] = useState("idle"); // idle|sending|success|error
     const cardRef = useRef(null);
     const toastRef = useRef(null);
@@ -44,13 +42,7 @@ export default function Appointment() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        if (!form.name.trim()  || 
-            !form.phone.trim() || 
-            !form.email.trim() || 
-            !form.message.trim() ||
-            !form.date.trim() ||
-            !form.time.trim()
-        ) {
+        if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
             setStatus("error");
             setTimeout(() => setStatus("idle"), 2200);
             return;
@@ -64,19 +56,16 @@ export default function Appointment() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     email: form.email.trim(),
-                    subject: `New Appointment Form Submission from ${form.name.trim()}`,
                     name: form.name.trim(),
-                    phone: form.phone.trim(),
-                    date: form.date.trim(),
-                    time: form.time.trim(),
+                    subject: `New Contact Form Submission from ${form.name.trim()}`,
                     text: form.message.trim(),
                     company: form.company.trim(),
                     html: "",
-                    formType:"appointment"
+                    formType:"contact-us"
                 }),
             });
             setStatus("success");
-            setForm({ name: "", phone: "", email: "", company: "", date: "", time: "", area: "", city: "", state: "", postCode: "", message: "" });
+            setForm({ name: "", email: "", company: "", message: "" });
             setTimeout(() => setStatus("idle"), 2400);
         } catch {
             setStatus("error");
@@ -85,45 +74,26 @@ export default function Appointment() {
     }
 
     return (
-        <div className="appointmentbg" id="appointment">
-            <main className="appointment-page alt-two" aria-label="Appointment">
-                <div className="appointment-bg-anim" aria-hidden="true" />
+        <div className="contactbg" id="contact">
+            <main className="contact-page alt-two" aria-label="Contact">
+                <div className="contact-bg-anim" aria-hidden="true" />
 
-                <div className="appointment-inner">
-                    <section ref={cardRef} className="appointment-card" aria-labelledby="appointment-heading">
-                        <div className="appointment-logo" aria-hidden="true">
-                            <img src="/images/ahml.png" alt="" width={96} height={96} />
-                        </div>
-                        <h2 id="appointment-heading">Massage Consent & Appointment Form</h2>
+                <div className="contact-inner">
+                    <section ref={cardRef} className="contact-card" aria-labelledby="contact-heading">
+                        <h2 id="contact-heading">Contact Us</h2>
 
-                        <form className="appointment-form" onSubmit={handleSubmit} noValidate>
+                        <form className="contact-form" onSubmit={handleSubmit} noValidate>
                             {/* <div className="row"> */}
                             <label className={`field ${form.name ? "filled" : ""}`}>
                                 <span>Name *</span>
                                 <input name="name" value={form.name} onChange={onChange} type="text" autoComplete="name" />
                             </label>
 
-                            <label className={`field ${form.phone ? "filled" : ""}`}>
-                                <span>Phone Number *</span>
-                                <input name="phone" value={form.phone} onChange={onChange} type="tel" autoComplete="tel" />
-                            </label>
-
                             <label className={`field ${form.email ? "filled" : ""}`}>
-                                <span>Email Address *</span>
+                                <span>Email *</span>
                                 <input name="email" value={form.email} onChange={onChange} type="email" autoComplete="email" />
                             </label>
-
-                            <div className="form-row">
-                                <label className={`field ${form.date ? "filled" : ""}`}>
-                                    <span className="px-27">*</span>
-                                    <input name="date" value={form.date} onChange={onChange} type="date" />
-                                </label>
-
-                                <label className={`field ${form.time ? "filled" : ""}`}>
-                                    <span className="px-18">*</span>
-                                    <input name="time" value={form.time} onChange={onChange} type="time" />
-                                </label>
-                            </div>
+                            {/* </div> */}
 
                             <label className={`field ${form.company ? "filled" : ""}`}>
                                 <span>Company</span>
@@ -137,25 +107,36 @@ export default function Appointment() {
 
                             <div className="form-actions">
                                 <button type="submit" className={`btn ${status === "sending" ? "loading" : ""}`} aria-live="polite">
-                                    {status === "sending" ? "Sending…" : status === "success" ? "Sent" : "Submit Appointment Request"}
+                                    {status === "sending" ? "Sending…" : status === "success" ? "Sent" : "Send Message"}
                                 </button>
 
                                 <div className={`status ${status}`} role="status" aria-hidden={status === "idle"}>
-                                    {status === "error" && <span className="err">Please complete required fields with *</span>}
+                                    {status === "error" && <span className="err">Please complete required fields</span>}
                                 </div>
                             </div>
                         </form>
                     </section>
 
+                    <aside className="contact-info" aria-labelledby="contact-info-heading">
+                        <div className="info-card flex justify-between flex-col gap-y-5">
+                            <h3 id="contact-info-heading">Reach out to <strong>ahml</strong> today</h3>
 
+                            <p>
+                                <b>Massage healing therapy</b> is a holistic, hands-on practice involving the manipulation of soft tissues—muscles, tendons, ligaments, and fascia—to reduce stress, alleviate pain, and promote physical and emotional well-being.
+                            </p>
+                            <p>
+                                Effective for reducing chronic back pain, neck and shoulder pain, headaches, and muscle stiffness.
+                            </p>
+                            <p>
+                                Stimulates blood flow, which helps deliver oxygen and nutrients to tissues, accelerates injury recovery, and reduces swelling.
+                            </p>
+                            <p>
+                                If you have any questions about our services, or need expert advice for you, we encourage you to contact us today.
+                            </p>
+                            
+                        </div>
+                    </aside>
                 </div>
-
-                <div ref={toastRef} className="appointment-toast" aria-hidden={status !== "success"}>
-                    {/* <strong>Thanks — we received your message</strong>
-                    <span>We’ll get back to you within 2 business days.</span> */}
-                </div>
-
-
             </main>
         </div>
     );
