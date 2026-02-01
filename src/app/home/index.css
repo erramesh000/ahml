@@ -79,6 +79,8 @@ body {
 .hero-buttons {
     display: flex;
     gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .cta-button {
@@ -226,5 +228,87 @@ body {
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+    }
+
+    .hero-overlay {
+        inset: 0;
+        padding: 1.5rem 1.25rem;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+        background-color: rgba(0, 0, 0, 0.45);
+        border-radius: 24px;
+        padding: 1.5rem 1.25rem 1.75rem;
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+        line-height: 1.1;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Treatments section styling */
+.treatments-section {
+    gap: 2.5rem;
+}
+
+.treatments-section--reverse {
+    flex-direction: row-reverse;
+}
+
+.treatments-image {
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.treatments-copy {
+    padding: 1.5rem 2rem;
+}
+
+.treatments-list {
+    margin-top: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem 1.5rem;
+    text-align: left;
+}
+
+.treatment-item h6 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #bc4b78;
+}
+
+.treatment-item p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #4b1645;
+}
+
+@media (max-width: 768px) {
+
+    .treatments-section,
+    .treatments-section--reverse {
+        flex-direction: column;
+    }
+
+    .treatments-copy {
+        padding: 1.25rem 0;
+    }
+
+    .treatments-list {
+        grid-template-columns: 1fr;
     }
 }

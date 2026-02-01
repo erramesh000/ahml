@@ -30,19 +30,23 @@ export const getAppointmentHtml = (name, phone, date, time, text, email) => {
         <div class="container" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; font-family: Arial, sans-serif;">
             
             <div class="header" style="background-color: #0070f3; color: #ffffff; padding: 30px; text-align: center;">
-                <h1 style="margin: 0; fontSize: 24px;">Appointment Confirmed</h1>
-                <p style="margin: 10px 0 0; opacity: 0.9;">Your booking has been successfully scheduled.</p>
+                <h1 style="margin: 0; fontSize: 24px;">Appointment Request</h1>
+                <p style="margin: 10px 0 0; opacity: 0.9;">Your booking request has been received and is being processed.</p>
             </div>
 
             <div class="content" style="padding: 30px;">
                 <p style="color: #555; line-height: 1.5;">
-                    Hello <strong>${name}</strong>,<br><br>
-                    We are pleased to confirm your appointment. Below are the details of your scheduled visit.
+                    Hello <strong>Team</strong>,<br><br>
+                    We have received a new appointment request. Below are the details of the requested visit.
                 </p>
 
                 <div style="margin-top: 20px; border: 1px solid #eee; border-radius: 8px; padding: 10px;">
                     <table class="info-table" style="width: 100%; border-collapse: collapse;">
                         <tbody>
+                        <tr>
+                                <td class="info-label" style="padding: 10px; font-weight: bold; color: #555; vertical-align: top; width: 130px;">Name:</td>
+                                <td class="info-value" style="padding: 10px; color: #333;">${name}</td>
+                            </tr>
                             <tr>
                                 <td class="info-label" style="padding: 10px; font-weight: bold; color: #555; vertical-align: top; width: 130px;">Date:</td>
                                 <td class="info-value" style="padding: 10px; color: #333;">${date}</td>

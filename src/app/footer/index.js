@@ -76,7 +76,7 @@ export default function Footer() {
                     {/* Center Column - Contact */}
                     <div className="footer-col footer-col-center">
                         <h3 className="footer-col-title">Contact me</h3>
-                        <p className="footer-phone">+1 (587)-968-4541</p>
+                        <p className="footer-phone">+1 (403)-477-2394</p>
                         <Link href="/contact" className="footer-btn">Contact us</Link>
                     </div>
 
@@ -86,9 +86,8 @@ export default function Footer() {
                         <ul className="footer-links">
                             <li><Link href="/contact">Contact with us</Link></li>
                             <li><Link href="/about">Who we are?</Link></li>
-                            <li><Link href="/safety">Safety data sheets</Link></li>
-                            <li><Link href="/careers">Job application</Link></li>
-                            <li><Link href="/privacy">Privacy policy</Link></li>
+                            <li><Link href="/services">Services</Link></li>
+                            <li><Link href="/packages">Packages</Link></li>
                         </ul>
                     </div>
                 </div>

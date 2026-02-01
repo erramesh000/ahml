@@ -257,15 +257,57 @@
     font-size: 13px;
 }
 
-/* aside info card: make flexible and responsive */
+/* aside info card: make flexible and visually rich */
 .info-card {
-    background: linear-gradient(180deg, #f6fff6, #f1fff1);
-    border-radius: 12px;
-    padding: 18px;
-    box-shadow: 0 12px 40px rgba(6, 12, 8, 0.06);
-    border: 1px solid rgba(20, 70, 30, 0.03);
+    position: relative;
+    background:
+        radial-gradient(circle at 0 0, rgba(188, 75, 120, 0.08), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(34, 197, 94, 0.06), transparent 55%),
+        linear-gradient(180deg, #f7fff9, #f1fff4);
+    border-radius: 18px;
+    padding: 22px 22px 20px;
+    box-shadow: 0 18px 55px rgba(6, 12, 8, 0.08);
+    border: 1px solid rgba(20, 70, 30, 0.06);
     width: 100%;
     max-width: 100%;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 12% 0, rgba(255, 255, 255, 0.6), transparent 60%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.contact-info h3 {
+    position: relative;
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #163b24;
+}
+
+.contact-info h3 strong {
+    color: #bc4b78;
+}
+
+.info-card p {
+    position: relative;
+    margin: 0 0 10px;
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: #163b24;
+}
+
+.info-card p b {
+    color: #bc4b78;
+}
+
+.info-card p:last-of-type {
+    margin-bottom: 0;
 }
 
 /* reduce max width of the aside on narrow screens to avoid spilling */

@@ -26,7 +26,7 @@ export default function Header() {
         { href: "/", label: "Home" },
         { href: "/about", label: "About us" },
         { href: "/services", label: "Services" },
-        { href: "/our-work", label: "Our Work" },
+        { href: "/packages", label: "Packages" },
         { href: "/contact", label: "Contact" },
     ];
 
@@ -115,7 +115,7 @@ export default function Header() {
                         </svg>
                     </div>
 
-                    <a href="tel:+15879684541" className="gn-phone">+1 (587)-968-4541</a>
+                    <a href="tel:+15879684541" className="gn-phone">+1 (403)-477-2394</a>
                     <a href="tel:+15879684541" >
                         <button className="gn-chat" aria-label="Live chat">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>

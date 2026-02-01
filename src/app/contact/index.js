@@ -61,7 +61,7 @@ export default function Contact() {
                     text: form.message.trim(),
                     company: form.company.trim(),
                     html: "",
-                    formType:"contact-us"
+                    formType: "contact-us"
                 }),
             });
             setStatus("success");
@@ -119,21 +119,24 @@ export default function Contact() {
 
                     <aside className="contact-info" aria-labelledby="contact-info-heading">
                         <div className="info-card flex justify-between flex-col gap-y-5">
-                            <h3 id="contact-info-heading">Reach out to <strong>ahml</strong> today</h3>
+                            <p>
+                                At <b>Advanced Healing Massage Ltd </b>, every session is designed to help you feel
+                                lighter, calmer, and more at home in your body. Whether you are managing chronic pain or
+                                simply craving a deep reset, we are here to listen and support you.
+                            </p>
+                            <p>
+                                Our team specializes in <b>deep tissue, relaxation, therapeutic, and cupping massage</b>
+                                to release tension, improve mobility, and quiet an overworked nervous system.
+                            </p>
+                            <p>
+                                If you have questions about which treatment is right for you, want to discuss specific
+                                concerns, or need help booking an appointment, we would love to hear from you.
+                            </p>
+                            <p>
+                                <b>Call or text:</b> +1 (403)-477-2394<br />
+                                <b>Location:</b> 3730 108 Ave NE #1141, Calgary, AB T3N 1V9, Canada
+                            </p>
 
-                            <p>
-                                <b>Massage healing therapy</b> is a holistic, hands-on practice involving the manipulation of soft tissues—muscles, tendons, ligaments, and fascia—to reduce stress, alleviate pain, and promote physical and emotional well-being.
-                            </p>
-                            <p>
-                                Effective for reducing chronic back pain, neck and shoulder pain, headaches, and muscle stiffness.
-                            </p>
-                            <p>
-                                Stimulates blood flow, which helps deliver oxygen and nutrients to tissues, accelerates injury recovery, and reduces swelling.
-                            </p>
-                            <p>
-                                If you have any questions about our services, or need expert advice for you, we encourage you to contact us today.
-                            </p>
-                            
                         </div>
                     </aside>
                 </div>
