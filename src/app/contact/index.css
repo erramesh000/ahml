@@ -1,0 +1,393 @@
+/* ...existing code... */
+
+/* Fixes for mobile responsiveness and horizontal overflow */
+
+/* Ensure consistent box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* New layout constraints */
+.contact-page.alt-two {
+    max-width: 1180px;
+    margin: 32px auto;
+    padding: 32px 20px;
+    /* reduced horizontal padding to avoid overflow */
+    position: relative;
+    z-index: 1;
+}
+
+/* animated subtle background - shrink/shift on small screens to avoid overflow */
+.contact-bg-anim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(19, 62, 30, 0.06), rgba(19, 62, 30, 0.04));
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contact-bg-anim::before {
+    content: "";
+    position: absolute;
+    left: -8%;
+    top: -12%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle at 30% 30%, rgba(42, 167, 110, 0.06), transparent 35%);
+    filter: blur(36px) saturate(110%);
+    animation: floatSlow 12s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+/* Brand logos strip */
+.contact-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 18px;
+}
+
+.brand-logo {
+    border-radius: 16px;
+    filter: drop-shadow(0 12px 20px rgba(8, 20, 10, 0.18));
+    transition: transform .36s cubic-bezier(.2, .9, .3, 1), filter .28s ease;
+    animation: logoFloat 5.6s ease-in-out infinite, logoGlow 4.2s ease-in-out infinite;
+    width: 120px;
+    height: auto;
+}
+
+.brand-logo:hover {
+    transform: translateY(-6px) scale(1.04);
+    filter: drop-shadow(0 18px 34px rgba(8, 20, 10, 0.26));
+}
+
+.brand-logo--ca {
+    box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.18);
+}
+
+.brand-logo--work {
+    box-shadow: inset 0 0 0 1px rgba(34, 197, 94, 0.18);
+}
+
+@keyframes logoFloat {
+    0% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-5px)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes logoGlow {
+
+    0%,
+    100% {
+        opacity: .95
+    }
+
+    50% {
+        opacity: 1
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-logos {
+        gap: 12px;
+    }
+
+    .brand-logo {
+        width: 96px;
+        /* height: 96px; */
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .brand-logo {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* layout: use flexible aside width and clamp to avoid overflow */
+.contact-inner {
+    display: grid;
+    grid-template-columns: 1fr min(420px, 36%);
+    gap: 28px;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+}
+
+/* card: responsive padding and prevent inner overflow */
+.contact-card {
+    background: linear-gradient(180deg, #ffffff, #f7fff7);
+    border-radius: 14px;
+    padding: 20px;
+    /* simpler base padding */
+    padding-inline: clamp(20px, 6vw, 60px);
+    /* responsive horizontal padding */
+    box-shadow: 0 26px 70px rgba(6, 12, 8, 0.08);
+    transform: translateY(18px);
+    opacity: 0;
+    transition: transform .6s cubic-bezier(.2, .9, .3, 1), opacity .6s;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+.contact-card.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* keep heading sizing comfortable on small screens */
+.contact-card h2 {
+    margin: 0 0 14px;
+    font-size: clamp(20px, 3.2vw, 26px);
+    color: #bc4b78;
+    font-weight: 800;
+}
+
+/* form grid row adapts to screen width */
+.contact-form .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* On smaller screens stack the two-column row */
+@media (max-width: 740px) {
+    .contact-form .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* fields & floating labels: ensure inputs never overflow */
+.field {
+    position: relative;
+    display: block;
+    margin-bottom: 14px;
+    width: 100%;
+}
+
+.field span {
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    font-size: 13px;
+    color: rgba(20, 70, 30, 0.68);
+    transition: transform .18s ease, top .18s ease, color .18s;
+    pointer-events: none;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    min-width: 0;
+    /* important to prevent overflow in flex/grid children */
+    padding: 18px 14px 12px;
+    border-radius: 10px;
+    border: 1px solid rgb(20 70 30 / 56%);
+    background: rgba(250, 255, 250, 0.98);
+    color: #163b24;
+    font-size: 15px;
+    outline: none;
+    transition: box-shadow .16s, border-color .16s;
+    resize: vertical;
+    box-shadow: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+    box-shadow: 0 16px 40px rgba(20, 80, 40, 0.06);
+    border-color: rgba(20, 110, 50, 0.14);
+}
+
+.field.filled span {
+    transform: translateY(-10px) scale(.86);
+    top: 6px;
+    color: #146a2a;
+}
+
+/* submit */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    background: #bc4b78;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 12px 36px rgba(20, 80, 40, 0.12);
+    transition: transform .18s, box-shadow .18s;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(20, 80, 40, 0.16);
+}
+
+.btn.loading {
+    opacity: 0.95;
+    pointer-events: none;
+}
+
+/* status */
+.status {
+    min-width: 140px;
+    color: #823333;
+    font-size: 13px;
+}
+
+/* aside info card: make flexible and visually rich */
+.info-card {
+    position: relative;
+    background:
+        radial-gradient(circle at 0 0, rgba(188, 75, 120, 0.08), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(34, 197, 94, 0.06), transparent 55%),
+        linear-gradient(180deg, #f7fff9, #f1fff4);
+    border-radius: 18px;
+    padding: 22px 22px 20px;
+    box-shadow: 0 18px 55px rgba(6, 12, 8, 0.08);
+    border: 1px solid rgba(20, 70, 30, 0.06);
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 12% 0, rgba(255, 255, 255, 0.6), transparent 60%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.contact-info h3 {
+    position: relative;
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #163b24;
+}
+
+.contact-info h3 strong {
+    color: #bc4b78;
+}
+
+.info-card p {
+    position: relative;
+    margin: 0 0 10px;
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: #163b24;
+}
+
+.info-card p b {
+    color: #bc4b78;
+}
+
+.info-card p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* reduce max width of the aside on narrow screens to avoid spilling */
+@media (max-width: 980px) {
+    .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-card {
+        padding-inline: 20px;
+    }
+
+    .info-card {
+        padding: 16px;
+    }
+
+    .contact-bg-anim::before {
+        left: -18%;
+        top: -28%;
+        width: 320px;
+        height: 320px;
+        opacity: 0.7;
+    }
+}
+
+/* mobile-specific tweaks */
+@media (max-width: 520px) {
+    .contact-page.alt-two {
+        padding: 20px 14px;
+    }
+
+    .contact-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .contact-card h2 {
+        font-size: 20px;
+    }
+
+    .field span {
+        left: 12px;
+        top: 10px;
+        font-size: 12px;
+    }
+
+    .field input,
+    .field textarea {
+        padding: 14px 12px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .contact-toast {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+    }
+
+    .contact-bg-anim::before {
+        display: none;
+    }
+}
+
+/* small accessibility: respects reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-bg-anim::before,
+    .contact-card,
+    .contact-toast {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* ...existing code... */

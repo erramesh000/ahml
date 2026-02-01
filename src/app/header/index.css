@@ -1,0 +1,273 @@
+/* Header: responsive, animated and accessible */
+.gn-header {
+    position: sticky;
+    top: 10px;
+    z-index: 80;
+    margin: 0 8px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 250, 250, 0.85));
+    box-shadow: 0 8px 28px rgba(6, 12, 8, 0.08);
+    animation: gn-slideDown .45s ease both;
+    overflow: visible;
+}
+
+.gn-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Brand */
+.gn-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.gn-logo {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    transition: transform .45s cubic-bezier(.22, .9, .3, 1);
+    transform-origin: center;
+    will-change: transform;
+}
+
+.gn-brand:hover .gn-logo {
+    transform: rotate(-8deg) scale(1.06);
+}
+
+.gn-title {
+    font-weight: 800;
+    color: #2a5a2a;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* Nav */
+.gn-nav {
+    margin-left: auto;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    transition: opacity .28s ease, transform .28s ease;
+}
+
+/* pill container that holds nav and contact controls */
+.gn-menu-pill {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #fff;
+    padding: 10px 22px;
+    border-radius: 9999px;
+    box-shadow: 0 8px 30px rgba(10, 20, 40, 0.08);
+    /* center the nav inside the pill while keeping brand left */
+    justify-content: center;
+}
+
+.gn-link {
+    color: #b75373;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: color .18s ease, background .18s;
+    font-size: 15px;
+}
+
+.gn-link::after {
+    display: none;
+}
+
+.gn-link:hover,
+.gn-link:focus {
+    color: #2a3845;
+}
+
+.gn-link:hover::after,
+.gn-link:focus::after {
+    width: 100%;
+}
+
+.gn-link.active {
+    background: linear-gradient(90deg, #bc4b78, #bc4b78);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    box-shadow: 0 6px 18px rgba(43, 108, 176, 0.18);
+}
+
+/* if the first item is active, nudge it to align with capsule edge */
+.gn-menu-pill .gn-link:first-child.active {
+    margin-left: -8px;
+    padding-left: 22px;
+}
+
+/* Burger (mobile) */
+.gn-burger {
+    display: none;
+    margin-left: 12px;
+    width: 46px;
+    height: 38px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.gn-burger .gn-icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+    color: #2e3b2e;
+}
+
+.gn-burger .gn-icon rect {
+    fill: #2e3b2e;
+}
+
+.gn-burger .gn-icon path {
+    stroke: #2e3b2e;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.gn-burger .close {
+    display: none;
+}
+
+.gn-burger.open .hamburger {
+    display: none;
+}
+
+.gn-burger.open .close {
+    display: block;
+}
+
+/* Mobile menu panel */
+@media (max-width: 768px) {
+    .gn-nav {
+        position: fixed;
+        right: 14px;
+        top: 86px;
+        width: calc(100% - 36px);
+        max-width: 420px;
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 14px;
+        box-shadow: 0 14px 40px rgba(6, 12, 8, 0.14);
+        transform: translateY(-8px) scale(.99);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform .28s cubic-bezier(.2, .9, .3, 1), opacity .28s;
+    }
+
+    .gn-nav.open {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .gn-burger {
+        display: inline-flex;
+        margin-left: auto;
+    }
+
+    .gn-link {
+        font-size: 18px;
+        color: #244224;
+        padding: 10px 6px;
+    }
+}
+
+/* contact controls inside pill */
+.gn-contacts {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 6px;
+}
+
+.gn-dots {
+    opacity: 0.9;
+}
+
+.gn-phone {
+    color: #bc4b78;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.gn-chat {
+    background: linear-gradient(180deg, #bc4b78, #bc4b78);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(43, 108, 176, 0.22);
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .gn-phone {
+        display: none;
+    }
+}
+
+/* Accent animated bottom bar */
+.gn-accent {
+    height: 8px;
+    margin: 6px 0 10px;
+    background: linear-gradient(90deg, #2a3845, #747474, #c2c5c9);
+    background-size: 200% 100%;
+    animation: gn-slide 6s linear infinite;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Animations */
+@keyframes gn-slide {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gn-slideDown {
+    from {
+        transform: translateY(-8px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Focus ring for accessibility */
+a:focus,
+button:focus {
+    outline: 3px solid rgba(45, 160, 70, 0.12);
+    outline-offset: 3px;
+}
