@@ -16,6 +16,11 @@ export default function RootLayout({ children }) {
                     content="Advanced Healing Massage Ltd, Advanced Healing Massage Ltd Calgary AB, Massage Therapy Calgary, Registered Massage Therapist Calgary, Professional Massage Therapy Calgary, Healing Massage Calgary, Massage Therapy in Calgary AB, Massage Therapist near T3N 1V9, Calgary Massage Clinic, Best Massage Therapy Calgary, Massage Services Calgary Alberta, Therapeutic Massage Calgary, Deep Tissue Massage Calgary, Relaxation Massage Calgary, Stress Relief Massage Calgary, Pain Relief Massage Calgary, Sports Massage Calgary, Prenatal Massage Calgary, Swedish Massage Calgary, Affordable massage therapy in Calgary, Professional massage therapist in Calgary Alberta, Book massage appointment in Calgary, Healing and relaxation massage Calgary"
                 />
 
+                <meta
+                    name="google-site-verification"
+                    content="j0G0_dbaikHQDnTuVEwIJp_POBfqcP0Sb25bYXfT3Yg"
+                />
+
                 <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 
             </head>

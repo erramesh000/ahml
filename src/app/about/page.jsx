@@ -63,8 +63,8 @@ export default function About() {
                     </div>
 
                     <div className="about-hero-media" aria-hidden="true">
-                        <div className="about-hero-image-wrap">
-                            <Image src={staffImg} alt="Advanced Healing Massage Ltd therapist" className="about-hero-image" priority />
+                        <div className="about-hero-image-wrapp">
+                            <Image src={staffImg} alt="Advanced Healing Massage Ltd therapist" className="about-hero-image" width={250} priority />
                         </div>
                         <div className="about-tag-card">
                             <p className="about-tag-title">Registered Massage Therapy</p>
