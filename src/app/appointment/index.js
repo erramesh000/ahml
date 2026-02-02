@@ -44,9 +44,9 @@ export default function Appointment() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        if (!form.name.trim()  || 
-            !form.phone.trim() || 
-            !form.email.trim() || 
+        if (!form.name.trim() ||
+            !form.phone.trim() ||
+            !form.email.trim() ||
             !form.message.trim() ||
             !form.date.trim() ||
             !form.time.trim()
@@ -72,7 +72,7 @@ export default function Appointment() {
                     text: form.message.trim(),
                     company: form.company.trim(),
                     html: "",
-                    formType:"appointment"
+                    formType: "appointment"
                 }),
             });
             setStatus("success");
@@ -92,7 +92,7 @@ export default function Appointment() {
                 <div className="appointment-inner">
                     <section ref={cardRef} className="appointment-card" aria-labelledby="appointment-heading">
                         <div className="appointment-logo" aria-hidden="true">
-                            <img src="/images/ahml.png" alt="" width={96} height={96} />
+                            <img src="/images/ahml.png" alt="Massage Therapy Calgary" width={96} height={96} />
                         </div>
                         <h2 id="appointment-heading">Massage Consent & Appointment Form</h2>
 

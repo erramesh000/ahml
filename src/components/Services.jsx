@@ -28,7 +28,7 @@ const Services = () => {
                 {massages.map((item, idx) => {
                     return <div className="lg:w-1/3 md:w-1/2 p-2" key={idx}>
                         <div className="rounded-2xl flex justify-center items-center flex-col shadow-lg">
-                            <img src={item.img} className="mb-5 h-70 rounded-t-2xl" alt="" />
+                            <img src={item.img} className="mb-5 h-70 rounded-t-2xl" alt="Pain Relief Massage Calgary" />
                             <div className='p-5 text-center'>
                                 <h1 className="text-center text-[#bc4b78] lg:text-3xl text-2xl font-semibold mb-4">{item.title}</h1>
                                 <p className="mb-5 text-justify text-[#bc4b78]">

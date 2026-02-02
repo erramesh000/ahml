@@ -36,7 +36,7 @@ export default function Header() {
                 <Link href="/" className="gn-brand" aria-label="ahml home">
                     <Image
                         src={ahml}
-                        alt="ahml CANADA"
+                        alt="Advanced Healing Massage Ltd"
                         className="gn-logo"
                         width={200}
                         height={200}

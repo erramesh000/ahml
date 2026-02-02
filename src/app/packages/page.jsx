@@ -150,7 +150,7 @@ export default function Packages() {
                     <div className="packages-satisfaction-media" aria-hidden="true">
                         <div className="packages-satisfaction-stack">
                             <div className="packages-photo-card">
-                                <Image src={aboutImg} alt="Client at Advanced Healing Massage" />
+                                <Image src={aboutImg} alt="Healing and relaxation massage Calgary" />
                             </div>
                             <div className="packages-photo-card packages-photo-card--front">
                                 <Image src={staffImg} alt="Therapist at Advanced Healing Massage" />
