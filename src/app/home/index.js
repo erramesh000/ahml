@@ -66,14 +66,8 @@ export default function Home() {
                             <h6>Massage Therapies</h6>
                             <p>From deeply therapeutic to light and soothing, each massage is tailored to your tension, lifestyle, and goals.</p>
                         </li>
-                        <li className="treatment-item">
-                            <h6>Makeup &amp; Waxing</h6>
-                            <p>Polished, confidence-boosting finishes for special occasions or simple everyday glow, always with gentle care.</p>
-                        </li>
-                        <li className="treatment-item">
-                            <h6>Nail Treatments</h6>
-                            <p>Manicures and pedicures that nourish hands and feet with spa-grade exfoliation, masks, and massage.</p>
-                        </li>
+
+
                     </ul>
                 </div>
             </div>
@@ -98,14 +92,7 @@ export default function Home() {
                             <h6>Massage Therapies</h6>
                             <p>Intuitive touch that targets knots, improves mobility, and invites your nervous system to completely unwind.</p>
                         </li>
-                        <li className="treatment-item">
-                            <h6>Makeup &amp; Waxing</h6>
-                            <p>Soft, natural looks and gentle hair removal to complement the inner calm you feel after every visit.</p>
-                        </li>
-                        <li className="treatment-item">
-                            <h6>Nail Treatments</h6>
-                            <p>Glossy, perfectly groomed nails paired with relaxing hand and foot massage for a finishing spa touch.</p>
-                        </li>
+
                     </ul>
                 </div>
                 <img src="/images/hero2.jpg" width={500} className="rounded-3xl sm:w-1/2 md:w-1/2 lg:w/12 w-full treatments-image" />
