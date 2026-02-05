@@ -58,10 +58,7 @@ export default function Home() {
                             <h6>Body Treatments</h6>
                             <p>Gently detoxifying scrubs and wraps that leave your skin silky smooth while easing tired, heavy muscles.</p>
                         </li>
-                        <li className="treatment-item">
-                            <h6>Hydrotherapy Treatments</h6>
-                            <p>Warm water rituals that melt away stress, improve circulation, and prepare your body for deeper relaxation.</p>
-                        </li>
+
                         <li className="treatment-item">
                             <h6>Massage Therapies</h6>
                             <p>From deeply therapeutic to light and soothing, each massage is tailored to your tension, lifestyle, and goals.</p>
@@ -84,10 +81,7 @@ export default function Home() {
                             <h6>Body Treatments</h6>
                             <p>Re-energize from the outside in with mineral-rich exfoliation, contouring wraps, and soothing body masks.</p>
                         </li>
-                        <li className="treatment-item">
-                            <h6>Hydrotherapy Treatments</h6>
-                            <p>Immerse yourself in calming hydro baths and showers that ease stiffness and support deep, restful sleep.</p>
-                        </li>
+
                         <li className="treatment-item">
                             <h6>Massage Therapies</h6>
                             <p>Intuitive touch that targets knots, improves mobility, and invites your nervous system to completely unwind.</p>
