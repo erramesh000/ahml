@@ -14,36 +14,27 @@ const KEYWORDS =
     "Advanced Healing Massage Ltd, Advanced Healing Massage Ltd Calgary AB, Massage Therapy Calgary, Registered Massage Therapist Calgary, Professional Massage Therapy Calgary, Healing Massage Calgary, Massage Therapy in Calgary AB, Massage Therapist near T3N 1V9, Calgary Massage Clinic, Best Massage Therapy Calgary, Massage Services Calgary Alberta, Therapeutic Massage Calgary, Deep Tissue Massage Calgary, Relaxation Massage Calgary, Stress Relief Massage Calgary, Pain Relief Massage Calgary, Sports Massage Calgary, Prenatal Massage Calgary, Swedish Massage Calgary, Affordable massage therapy in Calgary, Professional massage therapist in Calgary Alberta, Book massage appointment in Calgary, Healing and relaxation massage Calgary";
 
 const packages = [
+
     {
-        name: "Basic",
-        price: "39",
-        description: "Essential care to keep you feeling your best.",
-        features: [
-            "Consultation with doctor",
-            "Laboratory and diagnostic tests",
-            "Two home visits a year",
-        ],
-    },
-    {
-        name: "Comfort",
-        price: "59",
-        description: "Added peace of mind with extended support.",
-        features: [
-            "All from BASIC +",
-            "Day and night emergency care",
-            "Two more home visits a year",
-        ],
-    },
-    {
-        name: "Complex",
-        price: "99",
-        description: "Our most complete package for ongoing care.",
-        features: [
-            "All from COMFORT +",
-            "Rehabilitation after injury",
-            "Four more home visits a year",
-        ],
+        name: "Massage 1",
+        price: "100",
+        duration: "60 Mins",
+        description: "Extended session for deeper relaxation and muscle therapy.",
         featured: true,
+    },
+    {
+        name: "Massage 2",
+        price: "145",
+        duration: "90 Mins",
+        description: "Comprehensive treatment for complete healing and restoration.",
+        featured: false,
+    },
+    {
+        name: "Massage 3+",
+        price: "190",
+        duration: "120 Mins",
+        description: "Premium extended session for ultimate care and recovery.",
+        featured: false,
     },
 ];
 
@@ -77,13 +68,21 @@ const faqs = [
 
 export default function Packages() {
     const [openFaqIndex, setOpenFaqIndex] = React.useState(0);
+    const [selectedPackage, setSelectedPackage] = React.useState(null);
+
+    const handleSelectPackage = (packageName) => {
+        setSelectedPackage(packageName);
+        // Navigate to appointment page with selected package
+        window.location.href = `/appointment?package=${packageName}`;
+    };
+
     return (
         <>
             <Head>
                 <title>Massage Packages Calgary | Advanced Healing Massage Ltd</title>
                 <meta
                     name="description"
-                    content="Compare massage packages at Advanced Healing Massage Ltd in Calgary AB, including Basic, Comfort, and Complex options designed for different levels of ongoing care."
+                    content="Compare massage packages at Advanced Healing Massage Ltd in Calgary AB, including relaxation and therapeutic massage options at various duration and price points."
                 />
                 <meta name="keywords" content={KEYWORDS} />
             </Head>
@@ -94,8 +93,8 @@ export default function Packages() {
                         <span className="packages-eyebrow">Packages</span>
                         <h1 className="packages-title">Massage Packages</h1>
                         <p className="packages-subtitle">
-                            Choose the level of care that fits your schedule and body best. Each package includes a
-                            personalized consultation so your treatment is tailored to how you feel today.
+                            Choose the massage package that fits your schedule and needs. Each session is personalized to
+                            provide the perfect level of healing and relaxation for your body.
                         </p>
 
 
@@ -109,23 +108,22 @@ export default function Packages() {
                                     className={`package-card${pkg.featured ? " package-card--featured" : ""}`}
                                 >
                                     <header className="package-card-header">
-                                        <div className="package-icon">♡</div>
                                         <h2 className="package-name">{pkg.name}</h2>
                                         <p className="package-price">
                                             <span className="package-price-currency">$</span>
                                             {pkg.price}
-                                            <span className="package-price-period">mo</span>
+                                            <span className="package-price-separator"> | </span>
+                                            <span className="package-duration">{pkg.duration}</span>
                                         </p>
                                     </header>
                                     <p className="package-description">{pkg.description}</p>
-                                    <ul className="package-features">
-                                        {pkg.features.map((feature) => (
-                                            <li key={feature}>{feature}</li>
-                                        ))}
-                                    </ul>
-                                    <Link href="/appointment" className="package-button">
-                                        Choose
-                                    </Link>
+                                    <button
+                                        type="button"
+                                        className="package-button"
+                                        onClick={() => handleSelectPackage(pkg.name)}
+                                    >
+                                        Book Now
+                                    </button>
                                 </article>
                             ))}
                         </div>
